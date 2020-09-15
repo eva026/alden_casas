@@ -1,6 +1,6 @@
-# The Candy Museum
+# The Alden Casas
 
-> The Candy Museum is a website for a candy company. Here clients can learn about the company story.
+> The Alden Casas is a website for a real estate company. Here clients can learn about the company story.
 
 ## Table of contents
 
@@ -15,7 +15,7 @@
 
 ## General info
 
-The Candy Museum is made of three parts, i.e., home, about and tickets.
+The Alden Casas is made of three parts, i.e., About Alden, Buy or Sell and Contact Me.
 
 ## Screenshots
 
@@ -28,12 +28,27 @@ The Candy Museum is made of three parts, i.e., home, about and tickets.
 
 ## Setup
 
-\$ npm install
+_no extra actions_
 
 ## Code Examples
 
 Show examples of usage:
-`<nav id="mainNavbar" class="navbar top navbar-expand-md navbar-dark py-0 fixed-top" > <a class="navbar-brand text-secondary" href="#">CANDY</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" > <span class="navbar-toggler-icon"></span> </button>`
+`<body class="bg-primary">
+
+<header class="hero">
+<div id="alden-navbar" class="alden-navbar top">
+<h1>
+Alden
+<span class="brand">casas</span>
+</h1>
+ <nav>
+<ul>
+            <li><a href="#alden">ABOUT ALDEN</a></li>
+            <li><a href="#purchase">BUY OR SELL</a></li>
+            <li><a href="#contact">CONTACT ME</a></li>
+          </ul>
+        </nav>
+      </div>`
 
 ## Features
 

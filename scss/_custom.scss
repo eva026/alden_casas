@@ -1,53 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
-  font-family: 'Nunito', sans-serif;
-}
-
-.nav-link:hover {
-  color: #ea1c2c !important;
-}
-
-.navbar {
-  top: 0;
-  left: 0;
-  z-index: 10;
-  font-size: 1.4rem;
-  font-weight: 100;
-  background: rgba(222, 192, 222, 0.75);
-  .navbar-brand {
-    font-size: 1.4rem;
-  }
-}
-.navbar.top {
-  background: transparent;
-}
-// Section Slogan
-#slogan {
-  h1 {
-    font-size: 4rem;
-    font-weight: 200;
-  }
+  font-family: 'Roboto Condensed', sans-serif;
+  overflow-x: hidden !important;
 }
 
 // Utilities
-.section-info-heading {
-  font-weight: 200;
-  font-size: 1.8rem;
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+button {
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+}
+.line {
+  height: 0.25rem;
+  width: 5rem;
+  background: #023061;
 }
 
-.section-info-content {
-  font-weight: 100;
-  font-size: 1.2rem;
+/* Navbar */
+.alden-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  opacity: 0.7;
+  position: fixed;
+  color: #fff;
+  top: 0px;
+  width: 100%;
+  height: 70px;
+  padding: 0 30px;
+  transition: 0.5s;
 }
-@media (max-width: 1200px) {
-  #slogan h1 {
-    font-size: 3rem;
+
+/* make alden-navbar background invisible */
+.alden-navbar.top {
+  background: transparent;
+}
+
+.alden-navbar nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.alden-navbar a {
+  padding: 10px 20px;
+  margin: 0 5px;
+  color: #fff;
+  text-decoration: none;
+}
+.alden-navbar h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  span {
+    font-weight: 300;
   }
 }
 
-// Section About
-#about {
-  h2,
-  p {
+.alden-navbar a:hover {
+  border-bottom: #2674c7 3px solid;
+}
+
+/* Header */
+.hero {
+  background: url('../imgs/showcase.jpg') no-repeat center center/cover;
+  height: 100vh;
+  color: #fff;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.hero .content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.hero .content {
+  h1 {
+    font-size: 6rem;
+    font-weight: 600;
+  }
+  h4 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  h3 {
+    font-size: 3rem;
     font-weight: 200;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+}
+
+.hero * {
+  z-index: 10;
+}
+
+// Section Sale
+#sale {
+  font-family: 'Roboto', sans-serif;
+  padding: 70px 100px;
+  h4 {
+    font-weight: 300;
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    span {
+      font-weight: 700;
+    }
+  }
+  #cards {
+    font-family: 'Roboto Condensed', sans-serif;
+    h5 {
+      font-size: 0.8rem;
+      font-weight: 400;
+    }
+    h4 {
+      font-weight: 600;
+    }
+    i {
+      color: #000;
+    }
+    a {
+      text-decoration-line: underline;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+  }
+}
+// Section Alden
+#alden {
+  font-family: 'Roboto Condensed', sans-serif;
+  height: 26rem;
+  margin-top: 10rem;
+  position: relative;
+  img {
+    position: absolute;
+    height: 120%;
+    bottom: 0;
+  }
+  h1 {
+    font-weight: 700;
+    span {
+      font-weight: 300;
+    }
+  }
+  h5 {
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  .line {
+    width: 3.8rem;
+  }
+  p {
+    font-weight: 300;
+    font-size: 1.1rem;
+  }
+  button {
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+// Section Testimonials
+#testimonials {
+  h4 {
+    font-weight: 300;
+  }
+  h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  .blockquote-footer {
+    font-style: italic;
+  }
+}
+// Slide
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  margin: 5rem;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 20px 60px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  color: red;
+}
+
+.mySlides i {
+  color: #ab9020;
+}
+
+// Section Purchase
+#purchase {
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+  }
+  h3 {
+    font-weight: 300;
+  }
+  .line {
+    width: 3.2rem;
+  }
+}
+.purchase-info {
+  background: #e5eaef;
+}
+
+.purchase-info-item {
+  display: flex;
+}
+// Section Contact
+#contact {
+  h4 {
+    font-weight: 300;
+  }
+  h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    span {
+      font-weight: 300;
+    }
+  }
+  h3 {
+    font-weight: 300;
+    font-size: 1.2rem;
+    padding-top: 1rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+}
+// Section Contact-form
+#contact-form {
+  h3 {
+    font-weight: 300;
+    color: #929090;
+    font-size: 1.2rem;
+  }
+  h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
+}
+.contact-form-info {
+  background: url('../imgs/contact-bg.png') center center / cover no-repeat;
+  padding: 40px 0;
+}
+.contact-form-group {
+  padding: 10px 240px;
+}
+
+// Section Homes
+.column img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.column {
+  flex-basis: 100%;
+  flex: 1;
+}
+
+// Footer
+#footer {
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    span {
+      font-weight: 300;
+    }
+  }
+  .footer-line {
+    background: #395069;
+    height: 0.2px;
+    // width: 100%;
+  }
+
+  .footer-heading {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+
+  .goto-map {
+    text-decoration: underline;
+  }
+}
+
+// marker
+.marker {
+  background-image: url('http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|ea4334&chf=a,s,ee00FFFF');
+  background-size: cover;
+  width: 30px;
+  height: 40px;
+  cursor: pointer;
+}
+
+// Media Query
+@media (max-width: 1024px) {
+  .hero {
+    height: 70vh;
+  }
+  // Section Alden
+  #alden {
+    h1 {
+      font-size: 2rem;
+    }
+    h5 {
+      font-size: 1rem;
+    }
+    .line {
+      width: 3.8rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    button {
+      font-family: 'Raleway', sans-serif;
+    }
+  }
+}
+@media (max-width: 768px) {
+  #sale {
+    padding: 70px 40px;
+  }
+  .alden-navbar {
+    flex-direction: column;
+    height: 120px;
+    padding: 20px;
+  }
+  .contact-form-group {
+    padding: 10px 110px;
+  }
+}
+@media (max-width: 414px) {
+  .hero .content {
+    h1 {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+  }
+  .alden-navbar {
+    padding: 10px 10px;
+  }
+  .alden-navbar a {
+    padding: 6px 5px;
+    margin: 0 1px;
+  }
+  .hero .content {
+    padding: 0 5px;
+  }
+  .column {
+    flex-direction: column;
+  }
+  #alden {
+    margin-top: 0.8rem;
+    height: 48rem;
+    padding-top: 20px;
+    img {
+      height: 50%;
+      object-fit: cover;
+      left: 7%;
+    }
+  }
+  // purchase
+  .purchase-info-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .reverse {
+    flex-direction: column-reverse;
+  }
+  .contact-form-group {
+    padding: 10px 70px;
+  }
+  /* Slideshow container */
+  .slideshow-container {
+    margin: 0rem;
+  }
+  .mySlides {
+    padding: 20px 30px;
+  }
+  #footer {
+    .align {
+      align-items: center;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .alden-navbar {
+    padding: 10px 0px;
+  }
+  #alden {
+    height: 52rem;
   }
 }
